@@ -15,7 +15,7 @@ function RegisterPage() {
       const signupResponse = await axios.post('/api/auth/signup', {
         email: formData.get('email'),
         password: formData.get('password'),
-        fullname: formData.get('fullname'),
+        name: formData.get('name'),
       });
 
       const res = await signIn('credentials', {
@@ -39,8 +39,8 @@ function RegisterPage() {
         {error && <div>{error}</div>}
         <h1>Signup</h1>
 
-        <label>Fullname:</label>
-        <input type="text" placeholder="Fullname" name="fullname" />
+        <label>name:</label>
+        <input type="text" placeholder="name" name="name" />
 
         <label>Email:</label>
         <input type="email" placeholder="Email" name="email" />

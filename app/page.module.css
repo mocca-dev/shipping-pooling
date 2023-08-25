@@ -1,0 +1,29 @@
+.body {
+  position: relative;
+  background-color: var(--bg-dark);
+  padding: 0px var(--side-padding);
+  padding-top: 74px;
+  padding-bottom: 15px;
+  height: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.main {
+  position: relative;
+  padding-top: 20px;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  height: 100%;
+}

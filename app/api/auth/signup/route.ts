@@ -4,7 +4,7 @@ import User from '@/models/user';
 import { connectDB } from '@/lib/mongodb';
 
 export async function POST(request: Request) {
-  const { fullname, email, password } = await request.json();
+  const { name, email, password } = await request.json();
 
   if (!password || password.length < 6)
     return NextResponse.json(
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     const user = new User({
       email,
-      fullname,
+      name,
       password: hashedPassword,
     });
 

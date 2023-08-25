@@ -6,7 +6,7 @@ const schema = createSchema({
   typeDefs: /* GraphQL */ `
     type User {
       _id: ID!
-      fullname: String
+      name: String
       email: String
       # at: String
       # profilePic: String

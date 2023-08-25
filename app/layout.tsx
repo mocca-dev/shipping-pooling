@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Providers from './Providers';
+import Header from '@/components/Header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +27,10 @@ export default function RootLayout({
       />
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
