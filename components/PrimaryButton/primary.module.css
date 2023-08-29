@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+  padding: 10px 20px;
+  border-radius: var(--border-radius-normal);
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container div {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.container svg {
+  height: 30px;
+}
+
+.disabled {
+  opacity: 0.5;
+}

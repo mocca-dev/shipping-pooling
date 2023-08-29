@@ -1,10 +1,12 @@
 :root {
   font-size: 16px;
   --border-radius: 20px;
+  --border-radius-normal: 10px;
+  --bg-primary: #7f56d9;
   --bg-dark: #101014;
   --bg-light: #1b1b1b;
   --dark-primary: #2b2b2d;
-  --fg-primary: black;
+  --fg-primary: white;
   --fg-secondary: #71717d;
   --side-padding: 15px;
   --primary-linear-gradient: linear-gradient(
@@ -12,10 +14,6 @@
     rgba(195, 89, 221, 1) 0%,
     rgba(134, 82, 220, 1) 100%
   );
-}
-
-html {
-  box-sizing: border-box;
 }
 
 *,
@@ -34,6 +32,28 @@ body {
   color: var(--fg-primary);
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
-  padding-top: 74px;
+  padding: 0 15px;
+  background: rgb(127, 86, 217);
+  background: linear-gradient(
+    180deg,
+    rgba(127, 86, 217, 1) 0%,
+    rgba(127, 86, 217, 1) 13%,
+    rgba(255, 255, 255, 1) 45%
+  );
+}
+
+.main {
+  position: absolute;
+  z-index: 1;
+  top: 74px;
+  width: calc(100% - 30px);
+}
+
+input {
+  font-size: inherit;
 }
