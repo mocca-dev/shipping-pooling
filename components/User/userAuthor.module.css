@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.profilePic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.container p {
+  font-size: 11px;
+  color: black;
+}
+
+p.at {
+  color: var(--bg-primary);
+}

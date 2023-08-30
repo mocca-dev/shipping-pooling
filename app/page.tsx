@@ -1,8 +1,9 @@
 'use client';
-import Image from 'next/image';
+
 import styles from './page.module.css';
 import { useSession } from 'next-auth/react';
 import FieldText from '@/components/FieldText/FieldText';
+import List from '@/components/List/List';
 
 export default function Home() {
   const { data: session } = useSession();
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <FieldText type="text" placeholder="CABA, Córdoba, Tres Arroyos,..." />
+      <List />
     </main>
   );
 }

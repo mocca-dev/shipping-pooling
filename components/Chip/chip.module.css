@@ -1,0 +1,8 @@
+.container {
+  padding: 5px 10px;
+  height: 25px;
+  background-color: #efe5ff;
+  color: var(--bg-primary);
+  font-size: 12px;
+  border-radius: var(--border-radius-normal);
+}
