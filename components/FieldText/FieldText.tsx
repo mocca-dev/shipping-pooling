@@ -2,12 +2,16 @@ import { HTMLAttributes } from 'react';
 import styles from './fieldtext.module.css';
 
 interface FieldTextProps extends HTMLAttributes<HTMLDivElement> {
-  label: string;
-  type: string;
   placeholder: string;
+  label?: string;
+  type?: string;
 }
 
-const FieldText = ({ label, type, placeholder }: FieldTextProps) => {
+const FieldText = ({
+  label = '',
+  type = 'text',
+  placeholder,
+}: FieldTextProps) => {
   return (
     <div className={styles.container}>
       <label className={styles.label}>{label}</label>
