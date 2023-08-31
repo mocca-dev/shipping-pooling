@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import Providers from './Providers';
 import Header from '@/components/Header/Header';
+import NavBar from '@/components/NavBar/NavBar';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <div className="main">{children}</div>
+          <NavBar />
         </Providers>
       </body>
     </html>

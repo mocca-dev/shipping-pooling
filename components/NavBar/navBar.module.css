@@ -1,0 +1,29 @@
+.container {
+  z-index: 1;
+  position: fixed;
+  bottom: 15px;
+  padding: 10px 25px;
+  width: calc(100vw - 30px);
+  border-radius: var(--border-radius-normal);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: var(--bg-primary-blur);
+}
+
+.container ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container ul li {
+  height: 27px;
+}
+
+.container svg {
+  opacity: 0.3;
+}
+
+li.active svg {
+  opacity: 1;
+}
