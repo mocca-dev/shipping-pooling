@@ -1,4 +1,5 @@
 'use client';
+
 import { FormEvent, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -45,8 +46,18 @@ function LoginPage() {
       <LogoIcon />
       <h2>Bienvenido</h2>
       <form onSubmit={handleSubmit}>
-        <FieldText label="Email" type="email" placeholder="john@mail.com" />
-        <FieldText label="Password" type="password" placeholder="*******" />
+        <FieldText
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="john@mail.com"
+        />
+        <FieldText
+          name="password"
+          label="Password"
+          type="password"
+          placeholder="*******"
+        />
 
         {error && (
           <div className={styles.errorMsgContainer}>

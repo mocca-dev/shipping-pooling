@@ -9,7 +9,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   margin-top: 30px;
 }
 

@@ -1,4 +1,5 @@
 'use client';
+
 import { usePathname, useRouter } from 'next/navigation';
 import FavIcon from '../Icons/FavIcon/FavIcon';
 import HomeIcon from '../Icons/HomeIcon/HomeIcon';

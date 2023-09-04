@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  width: 100%;
+}
+
+.margin1015 {
   margin: 10px auto 15px auto;
 }
 
@@ -15,5 +19,6 @@
   background-color: white;
   border: none;
   padding: 14px 20px;
+  height: 50px;
   border-radius: var(--border-radius-normal);
 }
