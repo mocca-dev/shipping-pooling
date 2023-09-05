@@ -7,24 +7,22 @@ import NotificationIcon from '../Icons/NotificationIcon/NotificationIcon';
 import PackageIcon from '../Icons/PackageIcon/PackageIcon';
 import styles from './navBar.module.css';
 import { useEffect, useState } from 'react';
+import AddIcon from '../Icons/AddIcon/AddIcon';
+
+const initialValue = {
+  '/': true,
+  '/favourite': false,
+  '/pals': false,
+  '/new': false,
+};
 
 const NavBar = () => {
   const router = useRouter();
   const pathName = usePathname();
-  const [activeItems, setActiveItems] = useState({
-    '/': true,
-    '/favourite': false,
-    '/notifications': false,
-    '/pals': false,
-  });
+  const [activeItems, setActiveItems] = useState(initialValue);
 
   useEffect(() => {
-    const newActiveItems: any = {
-      '/': false,
-      '/favourite': false,
-      '/notifications': false,
-      '/pals': false,
-    };
+    const newActiveItems: any = { ...initialValue, '/': false };
 
     newActiveItems[pathName] = true;
     setActiveItems(newActiveItems);
@@ -47,19 +45,17 @@ const NavBar = () => {
   return (
     <nav className={styles.container}>
       <ul onClick={handleItemClick}>
-        <li className={`${activeItems['/'] ? styles.active : null}`}>
+        <li className={`${activeItems['/'] ? styles.active : ''}`}>
           <HomeIcon />
         </li>
-        <li className={`${activeItems['/favourite'] ? styles.active : null}`}>
+        <li className={`${activeItems['/favourite'] ? styles.active : ''}`}>
           <FavIcon />
         </li>
-        <li
-          className={`${activeItems['/notifications'] ? styles.active : null}`}
-        >
-          <NotificationIcon />
-        </li>
-        <li className={`${activeItems['/pals'] ? styles.active : null}`}>
+        <li className={`${activeItems['/pals'] ? styles.active : ''}`}>
           <PackageIcon />
+        </li>
+        <li className={`${activeItems['/new'] ? styles.active : ''}`}>
+          <AddIcon />
         </li>
       </ul>
     </nav>
