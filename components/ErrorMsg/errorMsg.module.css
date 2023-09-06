@@ -1,0 +1,10 @@
+.errorMsgContainer {
+  margin: 10px auto 15px auto;
+}
+
+.errorMsg {
+  padding: 10px 20px;
+  border-radius: var(--border-radius-normal);
+  background-color: red;
+  color: white;
+}
