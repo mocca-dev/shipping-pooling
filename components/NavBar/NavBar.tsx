@@ -43,22 +43,26 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={styles.container}>
-      <ul onClick={handleItemClick}>
-        <li className={`${activeItems['/'] ? styles.active : ''}`}>
-          <HomeIcon />
-        </li>
-        <li className={`${activeItems['/favourite'] ? styles.active : ''}`}>
-          <FavIcon />
-        </li>
-        <li className={`${activeItems['/pals'] ? styles.active : ''}`}>
-          <PackageIcon />
-        </li>
-        <li className={`${activeItems['/new'] ? styles.active : ''}`}>
-          <AddIcon />
-        </li>
-      </ul>
-    </nav>
+    <>
+      {pathName !== '/login' ? (
+        <nav className={styles.container}>
+          <ul onClick={handleItemClick}>
+            <li className={`${activeItems['/'] ? styles.active : ''}`}>
+              <HomeIcon />
+            </li>
+            <li className={`${activeItems['/favourite'] ? styles.active : ''}`}>
+              <FavIcon />
+            </li>
+            <li className={`${activeItems['/pals'] ? styles.active : ''}`}>
+              <PackageIcon />
+            </li>
+            <li className={`${activeItems['/new'] ? styles.active : ''}`}>
+              <AddIcon />
+            </li>
+          </ul>
+        </nav>
+      ) : null}
+    </>
   );
 };
 
