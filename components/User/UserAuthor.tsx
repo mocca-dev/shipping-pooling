@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import styles from './userAuthor.module.css';
+import { HTMLAttributes } from 'react';
 
-const UserAuthor = () => (
+interface UserAuthorProps extends HTMLAttributes<HTMLDivElement> {
+  id: string;
+}
+
+const UserAuthor = ({ id }: UserAuthorProps) => (
   <div className={styles.container}>
     <Image
       src={'https://avatars.githubusercontent.com/u/16454273?v=4'}
@@ -11,7 +16,7 @@ const UserAuthor = () => (
       alt=""
     />
     <div>
-      <p>Juan Perez</p>
+      <p>{id}</p>
       <p className={styles.at}>@JuanP</p>
     </div>
   </div>

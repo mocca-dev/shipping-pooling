@@ -9,6 +9,13 @@ const GetPosts = gql`
       _id
       from
       to
+      endDate
+      authorID {
+        _id
+        name
+        email
+        profileImg
+      }
     }
   }
 `;

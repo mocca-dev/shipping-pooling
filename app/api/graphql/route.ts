@@ -7,8 +7,9 @@ const schema = createSchema({
   typeDefs: /* GraphQL */ `
     type User {
       _id: ID!
-      name: String
-      email: String
+      name: String!
+      email: String!
+      profileImg: String
       # at: String
       # profilePic: String
     }
@@ -18,7 +19,7 @@ const schema = createSchema({
       from: String
       to: String
       endDate: String
-      authorID: String
+      authorID: User
     }
 
     # input NewPostInput {
@@ -44,7 +45,7 @@ const schema = createSchema({
       },
       getPosts: async () => {
         await connectDB();
-        return Post.find({});
+        return Post.find().populate('authorID');
       },
     },
     Mutation: {

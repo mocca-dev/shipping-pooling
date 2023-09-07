@@ -11,7 +11,8 @@ const postSchema = new Schema(
       required: [true, 'To value is required'],
     },
     authorID: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: 'User',
       required: [true, 'Author ID is required'],
     },
     endDate: {

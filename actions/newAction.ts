@@ -3,16 +3,19 @@
 import { gql, grafbase } from '@/lib/grafbase';
 import Post from '@/models/post';
 
-type Post = {
+export type User = {
+  _id: string;
+  name: string;
+  email: string;
+  profileImg: string;
+};
+
+export type Post = {
   _id: string;
   from: string;
   to: string;
   endDate: string;
-  authorID: string;
-};
-
-type NewPostRquest = {
-  addPost: Post;
+  authorID: User;
 };
 
 const AddPost = gql`
@@ -26,20 +29,21 @@ const AddPost = gql`
       _id
       from
       to
-      authorID
+      authorID {
+        _id
+      }
       endDate
     }
   }
 `;
 
-export const handleNewSubmit = async (formData: FormData) => {
+export const handleNewSubmit = async (formData: FormData, authorID: string) => {
   const from = formData.get('from');
   const to = formData.get('to');
   const endDate = formData.get('endDate');
-  const authorID = '64e4d87d3010a9ddbdb150e9';
 
   try {
-    const { addPost }: NewPostRquest = await grafbase.request(AddPost, {
+    await grafbase.request(AddPost, {
       from,
       to,
       authorID,
